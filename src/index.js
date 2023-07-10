@@ -8,7 +8,7 @@ kintone.events.on('app.record.detail.show', async (event) => {
   const generatie = document.createElement('button')
   kintone.app.record.getHeaderMenuSpaceElement().appendChild(generatie)
   generatie.id = 'generatie'
-  generatie.innerText = 'to excel'
+  generatie.innerText = 'export'
   generatie.onclick = async () => {
     try {
       const fileUrl = `/k/v1/file.json?fileKey=${fileInfo.fileKey}`
