@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { init } from 'excelize-wasm'
 import wasm from './excelize.wasm.gz'
 
