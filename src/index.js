@@ -12,7 +12,12 @@ kintone.events.on('app.record.detail.show', async (event) => {
   generatie.onclick = async () => {
     try {
       const fileUrl = `/k/v1/file.json?fileKey=${fileInfo.fileKey}`
-      const response = await fetch(fileUrl)
+      const response = await fetch(fileUrl, {
+        method: 'GET',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+      })
       const buff = await response.arrayBuffer()
       const newFile = excelize.OpenReader(new Uint8Array(buff))
       if (newFile.error) throw new Error(newFile.error)
